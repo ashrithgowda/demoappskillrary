@@ -30,11 +30,11 @@
 
     	<form action="verify.php" method="POST">
       		<div class="form-group has-feedback">
-        		<input type="email" class="form-control" name="email" placeholder="Email" required>
+        		<input type="email" class="form-control" name="email" placeholder="Email" value ="test@test.com" required>
         		<span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       		</div>
           <div class="form-group has-feedback">
-            <input type="password" class="form-control" name="password" placeholder="Password" required>
+            <input type="password" class="form-control" name="password" placeholder="Password" value="test" required>
             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
           </div>
       		<div class="row">
@@ -44,8 +44,8 @@
       		</div>
     	</form>
       <br>
-      <a href="password_forgot.php">I forgot my password</a><br>
-      <a href="signup.php" class="text-center">Register a new membership</a><br>
+      <!-- <a href="password_forgot.php">I forgot my password</a><br>
+      <a href="signup.php" class="text-center">Register a new membership</a><br> -->
       <a href="index.php"><i class="fa fa-home"></i> Home</a>
   	</div>
 </div>

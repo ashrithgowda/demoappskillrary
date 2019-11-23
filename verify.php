@@ -7,8 +7,8 @@ error_reporting(E_ALL);
 
 	if(isset($_POST['login'])){
 		
-		$email = $_POST['email'];
-		$password = $_POST['password'];
+		$email = "harry@den.com";
+		$password = "code0";
 
 		try{
 
