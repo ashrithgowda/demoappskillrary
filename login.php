@@ -4,13 +4,59 @@
     header('location: cart_view.php');
   }
 ?>
-<?php include 'includes/header.php'; ?>
-<body class="hold-transition login-page">
-<div class="login-box">
-  	<?php
+
+
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href= "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="designCard.css">
+
+</head>
+<body>
+
+
+   <div class="card">
+  
+  <div class="container">
+ <div id="headerContainer" class="header" style="color: black">Please identify yourself</div>
+   <button type="button" class="btn1"  data-placement="bottom" title="Tooltip on bottom">
+  
+  <div class="tooltip-content">
+  
+  <table id="demoCredentials">
+  <tbody>
+  <tr>
+  <td rowspan="2" id="adminCredentialsHeader" class="admin">Administrator:</td>
+  <td>Username: <b>admin</b></td>
+  </tr>
+  <tr>
+  <td>Password: <b>admin</b></td>
+  </tr>
+ 
+ <tr>
+  <td rowspan="2" id="userCredentialsHeader" class="admin">Regular User:</td>
+  <td id="userCredentialsUsername">Username: <b>user</b> </td>
+  </tr>
+  <tr>
+  <td>Password: <b>user</b></td>
+  </tr>
+  </tbody>
+  </table>
+  </div>
+  
+   
+</button>
+  <div>
+  <?php
       if(isset($_SESSION['error'])){
         echo "
-          <div class='callout callout-danger text-center'>
+          <div class='callout callout-danger text-center' style='color:red'>
             <p>".$_SESSION['error']."</p> 
           </div>
         ";
@@ -25,31 +71,18 @@
         unset($_SESSION['success']);
       }
     ?>
-  	<div class="login-box-body">
-    	<p class="login-box-msg">Sign in to start your session</p>
-
-    	<form action="verify.php" method="POST">
-      		<div class="form-group has-feedback">
-        		<input type="email" class="form-control" name="email" placeholder="Email" value ="test@test.com" required>
-        		<span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-      		</div>
-          <div class="form-group has-feedback">
-            <input type="password" class="form-control" name="password" placeholder="Password" value="test" required>
-            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-          </div>
-      		<div class="row">
-    			<div class="col-xs-4">
-          			<button type="submit" class="btn btn-primary btn-block btn-flat" name="login"><i class="fa fa-sign-in"></i> Sign In</button>
-        		</div>
-      		</div>
-    	</form>
-      <br>
-      <!-- <a href="password_forgot.php">I forgot my password</a><br>
-      <a href="signup.php" class="text-center">Register a new membership</a><br> -->
+<form action="verify.php" method="POST">
+  <input type="text" name="email" placeholder="Email"  required ></div>  
+   <div><input type="password" name="password" placeholder="Password"  required></div>
+   <div><button type="submit" id="last" class="btn btn-success text-white" name="login">Login</button>
       <a href="index.php"><i class="fa fa-home"></i> Home</a>
-  	</div>
-</div>
-	
+   </div>
+  </form>
+  
+  </div>
+   <img src="srlogo.png">
+ </div>
+
 <?php include 'includes/scripts.php' ?>
 </body>
 </html>

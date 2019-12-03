@@ -7,8 +7,40 @@ error_reporting(E_ALL);
 
 	if(isset($_POST['login'])){
 		
-		$email = "harry@den.com";
-		$password = "code0";
+		// if ($_POST['email'] == "user" && $_POST['password'] == "user") {
+		// 	$email = "harry@den.com";
+		// 	$password = "code0";
+		// } else if ($_POST['email'] == "admin" && $_POST['password'] == "admin") {
+		// 	$email = "admin@admin.com";
+		// 	$password = "password";
+		// } else {
+		// 	$email = "wrong@wrong.com";
+		// 	$password = "password";
+		// }
+
+		switch($_POST['email']) {
+
+			case "user" : $email = "harry@den.com";
+					 break;
+
+			case "admin" : $email = "admin@admin.com";
+						break;
+
+			default: $email = "wrong@wrong.com";
+
+		}
+		
+		switch($_POST['password']) {
+
+			case "user" : $password = "code0";
+					 break;
+
+			case "admin" : $password = "password";
+						break;
+
+			default: $password = "password";
+
+		}
 
 		try{
 
