@@ -34,6 +34,7 @@
     </div>
 </div>
 
+
 <!-- Edit Profile -->
 <div class="modal fade" id="edit">
     <div class="modal-dialog">
@@ -80,6 +81,18 @@
                       <input type="text" class="form-control" id="contact" name="contact" value="<?php echo $user['contact_info']; ?>">
                     </div>
                 </div>
+
+                <div class="form-group">
+                    <label for="addresstype" class="col-sm-3 control-label" style="width:150px;" >Address Type</label>
+                    <div class="col-sm-9">
+                      <select class="chosen-select" name="addresstype" style="width: 250px;">
+                        <option value="" >Select</option>
+                        <option value="home" <?php if($user['addresstype'] == 'home') echo 'selected';?> >Home</option>
+                        <option value="office" <?php if($user['addresstype'] == 'office') echo 'selected';?> >Office</option>
+                      </select>
+                    </div>
+                </div>
+
                 <div class="form-group">
                     <label for="address" class="col-sm-3 control-label">Address</label>
 
@@ -87,6 +100,16 @@
                       <textarea class="form-control" id="address" name="address"><?php echo $user['address']; ?></textarea>
                     </div>
                 </div>
+
+                <div class="form-group">
+                    <label for="gender" class="col-sm-3 control-label" style="margin-top: -6px;">Gender</label>
+                    <div class="col-sm-9">
+                        <input type="radio" name="gender" value="male" id="male" <?php if($user['gender'] == 'male') echo 'checked';?> > Male &nbsp;
+                        <input type="radio" name="gender" value="female" id="female" <?php if($user['gender'] == 'female') echo 'checked';?>> Female &nbsp;
+                        <input type="radio" name="gender" value="unknown" id="unknown" <?php if($user['gender'] == 'unknown') echo 'checked';?>> Unknown 
+                    </div>
+                </div>
+
                 <div class="form-group">
                     <label for="photo" class="col-sm-3 control-label">Photo</label>
 

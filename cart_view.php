@@ -12,6 +12,8 @@
 	      <section class="content">
 	        <div class="row">
 	        	<div class="col-sm-9">
+	        		<div id="message" style="background-color: green;height:32px; display:none"><button type="button" class="close"><span aria-hidden="true">&times;</span></button>
+	        			<span >Payment is successfully done</span></div>
 	        		<h1 class="page-header">YOUR CART</h1>
 	        		<div class="box box-solid">
 	        			<div class="box-body">
@@ -33,6 +35,8 @@
 	        			if(isset($_SESSION['user'])){
 	        				echo "
 	        					<div id='paypal-button'></div>
+	        					<button type='button' class='btn btn-info btn-lg' data-toggle='modal' data-target='#bank'>Bank</button>
+	        					<button type='button' class='btn btn-info btn-lg' data-toggle='modal' data-target='#paytm'>Paytm</button>
 	        				";
 	        			}
 	        			else{
@@ -195,5 +199,65 @@ paypal.Button.render({
 
 }, '#paypal-button');
 </script>
+
+<div class="container">
+  <div class="modal fade" id="bank" role="dialog">
+    <div class="modal-dialog">
+    
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">bank</h4>
+        </div>
+     
+        <iframe src="iframe_modal.php"  height="220" width="600" style="border:none;">
+        	
+        </iframe>
+
+        <div class="modal-footer">
+        	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-default paymentdone" data-dismiss="modal">Success</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+
+<div class="container">
+  <div class="modal fade" id="paytm" role="dialog">
+    <div class="modal-dialog">
+    
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">paytm</h4>
+        </div>
+     
+        <iframe src="iframe_modal.php"  height="220" width="600" style="border:none;">
+        	
+        </iframe>
+
+        <div class="modal-footer">
+        	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-default paymentdone" data-dismiss="modal">Success</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+<script>
+	$('.paymentdone').click(function () {
+
+		$('#message').show();	 
+		let url =window.location.pathname;
+		window.open(url, '_blank', 'height=200,width=300');
+
+	});
+
+</script>
+  
+</div>
 </body>
 </html>

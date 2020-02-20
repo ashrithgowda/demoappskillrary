@@ -26,6 +26,27 @@
                             <label for="message">Message</label>
                             <textarea class="form-control" id="message" rows="6" required></textarea>
                         </div>
+
+                        <div class="form-group">
+                            <label for="message">Choose programming language</label><br>
+                            <select multiple class="chosen-select" name="test" style="width: 250px;">
+                                    <option value="">Select</option>
+                                    <option value="react">React</option>
+                                    <option value="angular">Angular</option>
+                                    <option value="node">node</option>
+                                    <option value="mongodb">mongodb</option>
+                                    <option value="html">HTML</option>
+                                    <option value="javascript">javaScript</option>
+                                    <option value="java">Java</option>
+                            </select>
+                        </div>
+                         
+						<div class="form-group">
+    						<input type="checkbox" id="subscribeNews" name="subscribe" value="newsletter">
+    						<label for="subscribeNews">Subscribe to newsletter?</label>
+                        </div>
+
+
                         <div class="mx-auto">
                         <button type="submit" class="btn btn-primary text-right">Submit</button></div>
                     </form>
@@ -43,5 +64,13 @@
 </div>
 
 <?php include 'includes/scripts.php'; ?>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.jquery.min.js"></script>
+
+<script type="text/javascript">
+    $(".chosen-select").chosen({
+        no_results_text: "Oops, nothing found!"
+    })
+</script>
 </body>
 </html>
