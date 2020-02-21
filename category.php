@@ -18,6 +18,56 @@
 
 ?>
 <?php include 'includes/header.php'; ?>
+
+   <style>
+       
+        .shop {
+            border-radius:6px;
+            list-style-type:none;
+            padding:0;
+            margin:0;
+        }
+        .shop li{
+            display: inline-table;
+        }
+        .cart {
+            border: 4px solid #0066FF;
+            border-radius:6px;
+            min-height:128px;
+            display:block;
+            padding: 20px 10px;
+        }
+        .product {
+            border:3px solid white;
+        }
+        .product:hover {
+            border:3px solid red;
+            cursor:move;
+        }
+        .itemchoosen {
+            this.style.opacity = 0.5;
+            this.style.border = "2px solid red";
+        }
+        .itemblurred {
+            this.style.border = none;
+        }
+        #cartArea {
+            position: relative;
+            min-height: 200px;
+            width: 100%;
+            float: left;
+        }
+        #cartArea img {
+            float: left;
+            width: 20%;
+            margin: 2%;
+        }
+        .itemPrice {
+            width: 100%;
+            float: left;
+        }
+    </style>
+
 <body class="hold-transition skin-blue layout-top-nav">
 <div class="wrapper">
 
@@ -47,7 +97,7 @@
 	       							<div class='col-sm-4'>
 	       								<div class='box box-solid'>
 		       								<div class='box-body prod-body'>
-		       									<img src='".$image."' width='100%' height='230px' class='thumbnail'>
+                                                <img src='".$image."' class='product' id='".$row['name']."' data-price='".$row['price']."' width='100%' height='230px' class='thumbnail'>
 		       									<h5><a href='product.php?product=".$row['slug']."'>".$row['name']."</a></h5>
 		       								</div>
 		       								<div class='box-footer'>
@@ -71,6 +121,15 @@
 	        	</div>
 	        	<div class="col-sm-3">
 	        		<?php include 'includes/sidebar.php'; ?>
+	        		<fieldset id="mycart" class="cart">
+        <legend>My cart</legend>
+        <div id="cartArea"></div>
+    </fieldset>
+    <fieldset id="mycart" class="cart">
+        <legend>Total</legend>
+        <p id="the_sub_total"></p>
+        <p id="the_total">0</p>
+    </fieldset>
 	        	</div>
 	        </div>
 	      </section>
@@ -82,5 +141,58 @@
 </div>
 
 <?php include 'includes/scripts.php'; ?>
+
+
+<script>
+        var cartArea = document.querySelector('#cartArea'); 
+        var prods = document.querySelectorAll('.product');
+        var itemPriceElement;
+        for(var i = 0; i < prods.length; i++) {
+            itemPriceElement = document.createElement("span");
+            itemPriceElement.className = "itemPrice";
+            itemPriceElement.innerHTML = prods[i].getAttribute("data-price");
+            prods[i].parentNode.insertBefore(itemPriceElement, prods[i].nextSibling);
+            prods[i].setAttribute('draggable', 'true');  // optional with images
+            prods[i].addEventListener('dragstart', function(evnt) {
+                //this.className = 'itemchoosen';
+                this.classList.add('itemchoosen');
+                evnt.dataTransfer.effectAllowed = 'copy';
+                evnt.dataTransfer.setData('text', this.id);
+                return false;  
+            }, false);
+        }   
+        cartArea.addEventListener('dragover', function(evnt) {
+            if (evnt.preventDefault) evnt.preventDefault();
+            evnt.dataTransfer.dropEffect = 'copy';
+            return false;   
+        }, false);
+        cartArea.addEventListener('dragenter', function(evnt) {
+            return false;   
+        }, false);
+        cartArea.addEventListener('dragleave', function(evnt) {
+            return false;
+        }, false);
+        cartArea.addEventListener('drop', function(evnt) {
+            if (evnt.stopPropagation) evnt.stopPropagation();
+            var id = evnt.dataTransfer.getData('text');     
+            var theitem = document.getElementById(id); 
+            //theitem.parentNode.removeChild(el);   
+            //theitem.className='itemblurred';
+            theitem.classList.add('itemblurred');
+            var y  = document.createElement('img');
+            y.src = theitem.src;
+            cartArea.appendChild(y);
+            evnt.preventDefault(); // for Firefox
+            updateCart(theitem.getAttribute("data-price"));
+            return false;
+        }, false);
+        function updateCart(price){
+            var the_total = document.getElementById("the_total").innerHTML;
+            the_total = parseInt(the_total);
+            the_total = the_total + parseInt(price);
+            document.getElementById("the_total").innerHTML = the_total;
+        }
+    </script>
+
 </body>
 </html>

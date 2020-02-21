@@ -13,7 +13,7 @@
 	        <div class="row">
 	        	<div class="col-sm-9">
 
-<a href="images/paytm.png" download>
+<a href="images/dummy_pdf_invoice.pdf" download>
   <input type="button" class="btn btn-primary btn-block btn-flat btn btn-success" name="downloadInvoice" value="Download Invoice" ><br><br>
 </a>
 

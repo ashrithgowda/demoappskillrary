@@ -55,3 +55,31 @@
 	  	</div>
 	</div>
 </div>
+
+
+<div class="row">
+	<div class='box box-solid'>
+	  	<div class='box-header with-border'>
+	    	<h3 class='box-title'><b>Select Courses by price:</b></h3>
+	  	</div>
+	  	<div class='box-body'>
+
+			<form action="index.php" method="POST">
+				<select id="cars" name="cars" multiple class="form-control">
+				<option value="90">Free ( 90 ) </option>
+				<option value="99">INR 50 - INR 99 ( 1 ) </option>
+				<option value="199">INR 100 - INR 199 ( 16 ) </option>
+				<option value="299">INR 200 - INR 299 ( 3 ) </option>
+				<option value="399">INR 300 - INR 399 ( 1 ) </option>
+				<option value="500">More Than INR 500 ( 55 ) </option>
+				</select>
+				</br>
+				<input type="Submit" class="btn btn-success text-right">
+			</form>
+
+	  	</div>
+	</div>
+</div>
+
+
+

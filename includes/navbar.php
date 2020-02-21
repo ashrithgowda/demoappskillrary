@@ -37,6 +37,11 @@
 
 /*.dropdown:hover .dropbtn {background-color: #3e8e41;}*/
 
+#course{
+  color: white;
+  font-size: 14px;
+  display: block;
+}
 .wrappers {
    display: grid;
    grid-template-columns: repeat(7, 1fr);
@@ -64,7 +69,7 @@
             <!-- <a href="courses.php" id="courses">COURSE</a> -->
 
                 <div class="dropdown">
-                  <button class="dropbtn" style="background-color: slategray;color: white !important;" ><a href="index.php">COURSE</a></button>
+                  <button class="dropbtn" style="background-color: slategray;color: white !important;" ><a id='course' href="index.php">COURSE</a></button>
 
                   <div class="dropdown-content" style="width:50%; margin-left:-480%;">
                      <span class="wrappers" >
@@ -225,4 +230,48 @@
       </div>
     </div>
   </nav>
+
+
+  <script>
+  $( function() {
+    var availableTags = [
+  
+      "ActionScript",
+      "AppleScript",
+      "Asp",
+      "BASIC",
+      "C",
+      "C++",
+      "Clojure",
+      "COBOL",
+      "ColdFusion",
+      "Erlang",
+      "Fortran",
+      "Groovy",
+      "Haskell",
+      "Java",
+      "JavaScript",
+      "Lisp",
+      "Perl",
+      "PHP",
+      "Python",
+      "Ruby",
+      "Scala",
+      "Devops"
+    ];
+    $( "#navbar-search-input" ).autocomplete({
+      source: availableTags,
+      position: { my : "right top", at: "right bottom" }
+    });
+  } );
+
+  $(document).ready(function(){
+    $(".ui-autocomplete").css("z-index","9999");
+  });
+
+
+  </script>
 </header>
+
+
+

@@ -13,7 +13,9 @@
 <script src="dist/js/adminlte.min.js"></script>
 <!-- CK Editor -->
 <script src="bower_components/ckeditor/ckeditor.js"></script>
-
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 <script>
   $(function () {
