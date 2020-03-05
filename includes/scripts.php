@@ -3,8 +3,7 @@
 <!-- Bootstrap 3.3.7 -->
 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- DataTables -->
-<script src="bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
-<script src="bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+
 <!-- SlimScroll -->
 <script src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
 <!-- FastClick -->
@@ -12,16 +11,24 @@
 <!-- AdminLTE App -->
 <script src="dist/js/adminlte.min.js"></script>
 <!-- CK Editor -->
-<script src="bower_components/ckeditor/ckeditor.js"></script>
+<!-- <script src="bower_components/ckeditor/ckeditor.js"></script> -->
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script src="https://cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
+
+
 
 <script>
+
   $(function () {
     // Datatable
     $('#example1').DataTable()
     //CK Editor
+
+
     CKEDITOR.replace('editor1')
   });
 </script>
