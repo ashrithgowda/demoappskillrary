@@ -1,5 +1,56 @@
 <?php include 'includes/session.php'; ?>
 <?php include 'includes/header.php'; ?>
+<style>
+.blogContainer{
+	margin: 0;
+	padding: 0;
+}
+.FromBlog{
+	text-align: center;
+	font-weight: 600;
+	font-size: 28px;
+}
+.FromBlog:before{
+	position: absolute;
+    left: 0;
+    top: 380px;
+    /* bottom: 250px; */
+    right: 0;
+    height: 4px;
+    width: 80px;
+    background: #33A478;
+    content: "";
+    margin: 0 auto
+}
+.blogImg{
+	width: 100%;
+    height: 200px;
+    border: 2px solid black;
+}
+.imgContent{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: inline-flex;
+}
+.imgContent li{ 
+	font-size: 15px;
+}
+.imgContent li:nth-child(2){
+	padding-left: 8px;
+}
+.divUlBlog{
+	margin-bottom: 10px;
+}
+.blogPContentHead{
+	font-size: 18px;
+    font-weight: 900;
+}
+.blogPContent{
+	color: #6f6f6f;
+	font-size: 15px;
+}
+</style>
 <body class="hold-transition skin-blue layout-top-nav">
 <div class="wrapper">
 
@@ -47,6 +98,45 @@
 		                </a>
 		            </div>
 		            <h2>Monthly Top Sellers</h2>
+					<div>
+						<h3 class="FromBlog">From The Blog</h3>
+					</div><br/>
+					<div class="row">
+						<div class="col-md-4">
+							<img class="blogImg" src="https://www.skillrary.com/uploads/course/1229_small.jpg" ><br/><br/>
+							<div class="divUlBlog">
+							<ul class="imgContent">
+								<li><i class="fa fa-calendar-o" aria-hidden="true"></i> May 31, 2020</li>
+								<li><i class="fa fa-comment-o" aria-hidden="true"></i> 5</li>
+							</ul>
+							</div>
+							<p class="blogPContentHead">Skillrary tips for learning simple</p>
+							<p class="blogPContent">You will be mentored by leading industry experts throughout the course so that you can excel in the subject.</p>
+						</div>
+						<div class="col-md-4">
+							<img class="blogImg" src="https://www.skillrary.com/uploads/course/1228_small.jpg" ><br/><br/>
+							<div class="divUlBlog">
+							<ul class="imgContent">
+								<li><i class="fa fa-calendar-o" aria-hidden="true"></i> May 31, 2020</li>
+								<li><i class="fa fa-comment-o" aria-hidden="true"></i> 5</li>
+							</ul>
+							</div>
+							<p class="blogPContentHead">Skillrary tips for learning simple</p>
+							<p class="blogPContent">You will be mentored by leading industry experts throughout the course so that you can excel in the subject.</p>
+						</div>
+						<div class="col-md-4">
+							<img class="blogImg" src="https://www.skillrary.com/uploads/course/1227_small.jpg" ><br/><br/>
+							<div class="divUlBlog">
+							<ul class="imgContent">
+								<li><i class="fa fa-calendar-o" aria-hidden="true"></i> May 31, 2020</li>
+								<li><i class="fa fa-comment-o" aria-hidden="true"></i> 5</li>
+							</ul>
+							</div>
+							<p class="blogPContentHead">Skillrary tips for learning simple</p>
+							<p class="blogPContent">You will be mentored by leading industry experts throughout the course so that you can excel in the subject.</p>
+						</div>
+					</div>
+						
 		       		<?php
 		       			$month = date('m');
 		       			$conn = $pdo->open();
