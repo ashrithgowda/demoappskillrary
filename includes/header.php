@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
   	<!-- Font Awesome -->
   	<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+    
   	<!-- Theme style -->
   	<link rel="stylesheet" href="dist/css/AdminLTE.min.css">
   	<!-- AdminLTE Skins. Choose a skin from the css/skins
@@ -36,6 +37,7 @@
     <link rel="stylesheet" href="/resources/demos/style.css">
 
     <!-- Paypal Express -->
+    <script src="bower_components/mixitup.min.js"></script>
     <script src="https://www.paypalobjects.com/api/checkout.js"></script>
     <!-- Google Recaptcha -->
     <script src='https://www.google.com/recaptcha/api.js'></script>
