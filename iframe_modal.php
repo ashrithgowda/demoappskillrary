@@ -30,7 +30,8 @@ $filepath = 'images/myimage.png';
 // Image (logo) to be drawn
 $logopath = 'https://skillrary.com/uploads/images/fav-sr-64x64-logo.png';
 // qr code content
-$codeContents = 'https://skillrary.com/payment.php?user='.$user;
+$transactionId = rand();
+$codeContents = "Transaction Id : ".$transactionId;
 // Create the file in the providen path
 // Customize how you want
 QRcode::png($codeContents,$filepath , QR_ECLEVEL_H, 20);
@@ -161,12 +162,14 @@ imagepng($QR,$filepath);
         <li>Point QR Scanner at QR Code to make payment</li>
       </ul>
       <!-- <p style="font-size: 15px;color: #33A478;font-weight:bold"><i class="fa fa-play-circle playCircle" aria-hidden="true"></i> &nbsp;Watch Video</p> -->
+
       <div style="float:left">
-        <label style="color: #33A478;font-size: 16px;">Transaction Id: </label><br/><input type="number" class="form-control"/>
+        <label style="color: #33A478;font-size: 16px;">Transaction Id: </label><br/><input type="number" class="form-control" name="pay" id="pay"/>
       </div>
       <div>
-        <button type="submit" class="paymentButton">Payment</button>
+        <button onclick="closeframe()" class="paymentButton">Payment</button>
       </div>
+
     </div>
       <div class="aalisticons">
         <ul class="apple-android-icons">
@@ -186,3 +189,27 @@ imagepng($QR,$filepath);
 <div class="lineBottom"></div>
 <div class="lineBottom1"></div>
 </body>
+
+<script>
+  function closeframe() {
+    var pay = document.getElementById("pay").value;
+
+    if (pay.length > 0 ) {
+      if (pay > 0) {
+        var transaction = "<?php echo $transactionId;?>";
+        if (pay == transaction) {
+          window.parent.location.href="sales.php?pay="+transaction;  
+        } else {
+          alert('Invalid Transaction Id');
+        }
+        
+      } else {
+        alert('Invalid Transaction Id');
+      }
+    } else {
+      alert('Please Provide Transaction Id to complete payment');
+    }
+    //window.parent.document.getElementById('closeFrame').click(); 
+    
+  }
+</script>

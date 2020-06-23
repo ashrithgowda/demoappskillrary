@@ -80,7 +80,7 @@
 	        						<th>Date</th>
 	        						<th>Transaction#</th>
 	        						<th>Amount</th>
-	        						<th>Full Details</th>
+	        						<!-- <th>Full Details</th> -->
 	        					</thead>
 	        					<tbody>
 	        					<?php
@@ -103,9 +103,10 @@
 	        										<td>".date('M d, Y', strtotime($row['sales_date']))."</td>
 	        										<td>".$row['pay_id']."</td>
 	        										<td>&#36; ".number_format($total, 2)."</td>
-	        										<td><button class='btn btn-sm btn-flat btn-info transact' data-id='".$row['id']."'><i class='fa fa-search'></i> View</button></td>
+	        										
 	        									</tr>
 	        								";
+	        								// <td><button class='btn btn-sm btn-flat btn-info transact' data-id='".$row['id']."'><i class='fa fa-search'></i> View</button></td>
 	        							}
 
 	        						}
