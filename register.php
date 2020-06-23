@@ -44,7 +44,7 @@
 			$row = $stmt->fetch();
 			if($row['numrows'] > 0){
 				$_SESSION['error'] = 'Email already taken';
-				header('location: signup.php');
+				header('location: login.php');
 			}
 			else{
 				$now = date('Y-m-d');

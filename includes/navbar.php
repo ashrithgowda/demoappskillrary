@@ -47,7 +47,29 @@
    grid-template-columns: repeat(7, 1fr);
    /*grid-template-rows: repeat(7, 100px);*/
 }
-
+.nav>li>a {
+    position: relative;
+    display: block; 
+    padding: 15px 15px;
+    color: white;
+}
+.main-header .navbar{
+  margin-left: 0 !important;
+}
+.main-header{
+    background-image: linear-gradient(to right, rgba(0,0,0), rgba(51,	164,	120) , rgba(0,0,0)) !important;
+}
+.register .nav-tabs .nav-link {
+    padding: 2%;
+    height: 31px;
+    font-weight: 600;
+    color: black;
+    border-top-right-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+    border-top-left-radius: 1.5rem;
+    border-bottom-left-radius: 1.5rem;
+    width: 105px;
+}
 </style>
 <header class="main-header">
   <nav class="navbar navbar-static-top">
@@ -69,7 +91,7 @@
             <!-- <a href="courses.php" id="courses">COURSE</a> -->
 
                 <div class="dropdown">
-                  <button class="dropbtn" style="background-color: slategray;color: white !important;" ><a id='course' href="index.php">COURSE</a></button>
+                  <button class="dropbtn" style="background-color: transparent;color: white !important;" ><a id='course' href="index.php">COURSE</a></button>
 
                   <div class="dropdown-content" style="width:50%; margin-left:-480%;">
                      <span class="wrappers" >
@@ -201,7 +223,6 @@
                     <!-- User image -->
                     <li class="user-header">
                       <img src="'.$image.'" class="img-circle" alt="User Image">
-
                       <p>
                         '.$user['firstname'].' '.$user['lastname'].'
                         <small>Member since '.date('M. Y', strtotime($user['created_on'])).'</small>
@@ -221,8 +242,8 @@
             }
             else{
               echo "
-                <li><a href='login.php'>LOGIN</a></li>
-                <li><a href='signup.php'>SIGNUP</a></li>
+                <li><a href='login.php?type=login'>LOGIN</a></li>
+                <li><a href='login.php?type=register'>SIGNUP</a></li>
               ";
             }
           ?>

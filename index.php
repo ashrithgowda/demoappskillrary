@@ -208,7 +208,11 @@
 	color: #252525;
 	font-weight: 700;
 }
-
+@media (min-width: 992px){
+	#navbar-search-input:focus{
+		width: 150px !important;
+	}
+}
 </style>
 <body class="hold-transition skin-blue layout-top-nav">
 <div class="wrapper">

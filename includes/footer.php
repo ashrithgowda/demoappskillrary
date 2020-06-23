@@ -136,40 +136,52 @@
   line-height: 30px;
   margin-bottom: 30px;
 }
-
+@media (min-width: 992px){
+.col-md-offset-1 {
+    margin-left: 5.33333333%;
+}
+}
 </style>
 <footer class="main-footer">
     <div class="container">
       <div class="row">
-      <div class="col-md-3">
+      <div class="col-md-4">
         <div class="footer_1">
           <div class="skillrary_logo">
           <a href="https://skillrary.com/"><img src="https://skillrary.com/uploads/images/f-sr-logo-195-50.png"/></a>
           </div>
           <ul class="AddressBox">
           <li><span style="font-weight: 600;color: #33A478">Address:</span> #50, 1st Floor, Brigade MLR Center, Vani Vilas Road, Bangalore-560004, Karnataka, India</li>
-          <li><span style="font-weight: 600;color: #33A478">Phone:</span> (+91)9606655655, (+91)9606655655, +44(747)190-0695</li>
+          <li><span style="font-weight: 600;color: #33A478">Phone Number:</span> <br/> IND: (+91) 9606655655, <br/> US: +1(415)429-3957,  <br/> UK: +44(747)190-0695</li>
           <li><span style="font-weight: 600;color: #33A478">Email:</span> info@skillrary.com</li>
           </ul>
         </div>
       </div>
-      <div class="col-md-4 col-md-offset-1">
+      <div class="col-md-3 col-md-offset-1">
         <h5 class="usefull_links">Useful Links</h5>
         <ul class="useLi_one">
-          <li><a href="https://skillrary.com/">About Us</a></li>
-          <li><a href="https://skillrary.com/">About Our Shop</a></li>
-          <li><a href="https://skillrary.com/">Secure Shopping</a></li>
-          <li><a href="https://skillrary.com/">Delivery Information</a></li>
-          <li><a href="https://skillrary.com/">Privacy Policy</a></li>
-          <li><a href="https://skillrary.com/">Our Sitemap</a></li>
+        <li><a href="https://www.skillrary.com/blogs">Blogs</a></li> 
+        
+        <li><a href="https://www.skillrary.com/testimoniallist">Testimonial</a></li>                 
+        
+        <li><a href="https://www.skillrary.com/compiler/">Compiler</a></li> 
+   
+        <li><a href="https://www.skillrary.com/service">Services</a></li>
+       
+        <li><a href="https://www.skillrary.com/user-forum">Forum</a></li>                  
+       
         </ul>
         <ul class="useLi">
-          <li><a href="https://skillrary.com/">Who we are</a></li>
-          <li><a href="https://skillrary.com/">Our Services</a></li>
-          <li><a href="https://skillrary.com/">Projects</a></li>
-          <li><a href="https://skillrary.com/">Contact</a></li>
-          <li><a href="https://skillrary.com/">Innovation</a></li>
-          <li><a href="https://skillrary.com/">Testimonials</a></li>
+      
+        <li><a href="https://www.skillrary.com/user/career">Career</a></li> 
+                   
+        <li><a href="https://www.skillrary.com/internships">Internship</a></li>  
+     
+        <li><a href="https://www.skillrary.com/about-us">About Us</a></li> 
+   
+        <li><a href="https://www.skillrary.com/faq">FAQs</a></li> 
+                     
+        <li><a href="https://www.skillrary.com/contact-us">Contact Us</a></li>
         </ul>
       </div>
       <div class="col-md-4">

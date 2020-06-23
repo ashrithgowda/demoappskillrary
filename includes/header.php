@@ -101,7 +101,11 @@
       width: 100px;
       height: 100px;
     }
-
+    @media (min-width: 992px){
+	#navbar-search-input:focus{
+		width: 150px !important;
+	}
+}
     </style>
 
 </head>
