@@ -58,6 +58,7 @@ imagecopyresampled($QR, $logo, $QR_width/3, $QR_height/3, 0, 0, $logo_qr_width, 
 // Save QR code again, but with logo on it
 imagepng($QR,$filepath);
  ?>
+
 <style type="text/css">
 .paytmContentUl{
   margin: 16px;
@@ -66,7 +67,7 @@ imagepng($QR,$filepath);
 }
 .paytmContentUl li{
   font-size: 15px;
-  line-height: 3;
+  line-height: 2;
   color: black;
 }
 .loginText{
@@ -85,7 +86,7 @@ imagepng($QR,$filepath);
   padding: 0;
 }
 .aalisticons{
-  margin-top: -20px;
+  margin-top: -9px;
 }
 .aalisticons ul{
   list-style: none;
@@ -99,16 +100,17 @@ imagepng($QR,$filepath);
 }
 .leftContainer{
   background: #f8f9fc;
-  height: 450px;
+  height: 510px;
   width: 400px;
 }
 .rightContainer{
   background: white;
-  height: 450px;
+  height: 510px;
   width: 400px;
 }
 .qrimage{
   width: 100%;
+  margin: 25px 0px;
 }
 .scanQR{
   text-align: center;
@@ -136,25 +138,20 @@ imagepng($QR,$filepath);
   color: white;
   font-size: 18px;
   padding: 4px 15px;
-  margin-top: 27px;
+  margin-top: 80px;
   border: 1px solid #33A478;
   margin-left: 15px;
 }
 .paymentButton:hover{
   background: black;
-  color: white;
-  font-size: 18px;
-  padding: 4px 15px;
-  margin-top: 27px;
-  border: 1px solid black;
-  margin-left: 15px;
+
 }
 </style>
 <body>
 
 <div class="someContainer">
   <div class="leftContainer">
-    <div style="margin: 45px 30px;">
+    <div style="margin: 30px;">
       <h3 class="loginText">To Make Payment</h3>
       <ul class="paytmContentUl">
         <li>Open QR Code Scanner</li>
@@ -163,8 +160,11 @@ imagepng($QR,$filepath);
       </ul>
       <!-- <p style="font-size: 15px;color: #33A478;font-weight:bold"><i class="fa fa-play-circle playCircle" aria-hidden="true"></i> &nbsp;Watch Video</p> -->
 
+      <div>
+        <label style="color: #33A478;font-size: 16px;">User Id: <span style="color:grey;font-size: 12px">(Optional)</span> </label><br/><input type="number" class="form-control" name="user"/><br/>
+      </div>
       <div style="float:left">
-        <label style="color: #33A478;font-size: 16px;">Transaction Id: </label><br/><input type="number" class="form-control" name="pay" id="pay"/>
+        <label style="color: #33A478;font-size: 16px;">Transaction Id: </label><br/><input id="transaction_id_read" type="number" placeholder="<?php print_r($transactionId) ?>"  class="form-control" readonly><br/><input type="number" class="form-control" name="pay" id="pay"/>
       </div>
       <div>
         <button onclick="closeframe()" class="paymentButton">Payment</button>

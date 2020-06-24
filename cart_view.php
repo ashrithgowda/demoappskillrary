@@ -27,6 +27,19 @@
 .closeButtonn:focus{
 	outline: none;
 }
+.checkoutButton{
+	background: #33A478;
+	padding: 7px 15px;
+}
+.checkoutButton:hover{
+	background: #33A478 !important;
+}
+.checkoutButton:active{
+	background: #33A478;
+}
+.checkoutButton:focus{
+	background: #33A478;
+}
 </style>
 <body class="hold-transition skin-blue layout-top-nav">
 <div class="wrapper">
@@ -65,7 +78,7 @@
 	        				echo "
 	        					<!-- <div id='paypal-button'></div>
 	        					<button type='button' class='btn btn-info btn-lg' data-toggle='modal' data-target='#bank'>Bank</button> -->
-	        					<button type='button' class='btn btn-info btn-lg' data-toggle='modal' data-target='#paytm'>checkout</button>
+	        					<button type='button' class='btn btn-info btn-lg checkoutButton' data-toggle='modal' data-target='#paytm'>Checkout</button>
 	        				";
 	        			}
 	        			else{
@@ -265,7 +278,7 @@ paypal.Button.render({
          
           <button type="button" class="close closeButtonn" data-dismiss="modal">&times;</button>
  
-		<iframe src="iframe_modal.php?user=<?php echo $_SESSION['user'];?>"  height="470" width="800" style="border:none; border-radius: 10px;">
+		<iframe src="iframe_modal.php?user=<?php echo $_SESSION['user'];?>"  height="530" width="800" style="border:none; border-radius: 10px;">
 		
         	
         </iframe>
